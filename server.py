@@ -37,7 +37,7 @@ class GameServer:
         
         while True:
             try:
-                data = conn.recv(1024).decode()
+                data = conn.recv(4096).decode()
                 if not data:
                     break
                 
@@ -90,6 +90,5 @@ class GameServer:
             thread.start()
 
 if __name__ == "__main__":
-    # To run the server
      server = GameServer()
      server.start()  
